@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+
+    <!-- 2. Crie um programa o qual:  -->
+
+    <!-- a) Tenha um campo "Destino de viagem" e um botão "Adicionar"; -->
+    <input type="text" id="input_destino">
+    <button onclick="adicionar()">Adicionar</button> <br>
+
+    <!-- c) Devem haver os botões:-->
+    <!-- "Primeira viagem"-->
+    <button onclick="primeira()">Primeira viagem</button>
+
+    <!-- "Terceira viagem" -->
+    <button onclick="terceira()">Terceira viagem</button>
+
+    <!-- Última viagem -->
+    <button onclick="ultima()">Última viagem</button>
+
+    <div id="exibir"></div>
+
+    <script>
+
+        var ListaDestino = [];
+
+        //b) Ao clicar no botão, esse destino deve ser adicionado a uma lista (que não aparece para o usuário).
+        function adicionar () {
+
+            var destino = input_destino.value
+
+            ListaDestino.push(destino);
+        }
+
+        //Ao ser clicado, aparece abaixo o primeiro local cadastrado ou "Ainda não viajou" - caso nenhuma viagem tenha sido registrada;
+        function primeira () {
+            if (ListaDestino.length > 0) {
+
+                exibir.innerHTML = `Primeira viagem: ${ListaDestino[0]}`
+
+            } else { exibir.innerHTML = `Ainda não viajou` }
+        }
+
+        //Ao ser clicado, aparece abaixo o terceiro local cadastrado ou "Ainda fez a terceira viagem", caso não tenha feito, ao menos, três viagens;
+        function terceira() {
+            if (ListaDestino.length >= 2) {
+
+                exibir.innerHTML = `Terceira viagem: ${ListaDestino[2]}`
+
+            } else { exibir.innerHTML = `Ainda não fez a terceira viagem` }
+
+        }
+
+        function ultima () {
+
+            if (ListaDestino.length > 0) { 
+
+                exibir.innerHTML = `O último local cadastrado é: ${ListaDestino[ListaDestino.length - 1]}`
+
+            }else {exibir.innerHTML = `Ainda não viajou`}
+        }
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
