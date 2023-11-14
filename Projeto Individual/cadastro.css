@@ -1,0 +1,19 @@
+.parent {
+    display: flex;
+    background-color: lightblue;
+    height: 400px;
+    width: 400px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: auto;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
